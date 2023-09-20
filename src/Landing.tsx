@@ -2,10 +2,24 @@ import { useState } from "react"
 import mockData from "./mockData/topHeadlinesMockData.json"
 import reporting from './assets/reporting.png'
 
+type NewsData = {
+  source: {
+    id: string | null,
+    name: string | null
+  },
+  author: string | null,
+  title: string | null,
+  description: string | null,
+  url: string | null,
+  urlToImage: string | null,
+  publishedAt: string | null,
+  content: string | null
+}
+
 const Landing = () => {
   const [articles, setArticles] = useState(mockData.articles)
 
-  const articleCards = articles.map(article => {
+  const articleCards = articles.map((article: NewsData) => {
     if (article.content === '[Removed]') {
       return
     }
