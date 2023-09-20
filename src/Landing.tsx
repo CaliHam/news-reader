@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import mockData from "./mockData/topHeadlinesMockData.json"
 import reporting from './assets/reporting.png'
 
@@ -8,16 +8,23 @@ type NewsData = {
     name: string | null
   },
   author: string | null,
-  title: string | null,
+  title: string | undefined,
   description: string | null,
   url: string | null,
   urlToImage: string | null,
-  publishedAt: string | null,
+  publishedAt: string,
   content: string | null
 }
 
 const Landing = () => {
+  // const [articles, setArticles] = useState([])
   const [articles, setArticles] = useState(mockData.articles)
+
+  // useEffect(() => {
+  //   fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=ab33066f4086468da77fc97eceef18d6&pageSize=7')
+  //   .then(res => res.json())
+  //   .then(data => setArticles(data.articles))
+  // }, [])
 
   const articleCards = articles.map((article: NewsData) => {
     if (article.content === '[Removed]') {
