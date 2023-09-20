@@ -1,50 +1,29 @@
 import { useEffect, useState } from "react"
 import mockData from "./mockData/topHeadlinesMockData.json"
-import reporting from './assets/reporting.png'
+import next from './assets/next.png'
+import ArticleCards from "./ArticleCards"
+import { Article } from './types';
 
-type NewsData = {
-  source: {
-    id: string | null,
-    name: string | null
-  },
-  author: string | null,
-  title: string | undefined,
-  description: string | null,
-  url: string | null,
-  urlToImage: string | null,
-  publishedAt: string,
-  content: string | null
-}
+type LandingProps = {
+  setChosenStory: (article: Article | null) => void;
+};
 
-const Landing = () => {
-  // const [articles, setArticles] = useState([])
+const Landing: React.FC<LandingProps> = ({setChosenStory}) => {
   const [articles, setArticles] = useState(mockData.articles)
+  // const [articles, setArticles] = useState([])
+  const [pageNum, setPageNum] = useState(1)
 
   // useEffect(() => {
-  //   fetch('https://newsapi.org/v2/top-headlines?country=us&apiKey=ab33066f4086468da77fc97eceef18d6&pageSize=7')
+  //   fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=ab33066f4086468da77fc97eceef18d6&page=${pageNum}&pageSize=6`)
   //   .then(res => res.json())
   //   .then(data => setArticles(data.articles))
-  // }, [])
-
-  const articleCards = articles.map((article: NewsData) => {
-    if (article.content === '[Removed]') {
-      return
-    }
-    return (
-      <div className="border-2 border-solid border-blue-500 flex flex-col">
-        <img src={article.urlToImage ? article.urlToImage : reporting} className="w-full h-54 object-cover object-center" alt={article.title}/>
-        <h2 className="text-blue-900 text-3xl p-5">{article.title}</h2>
-        <button className="bg-blue-900 rounded-full text-blue-50 px-3 self-center w-fit">Read More</button>
-      </div>
-    )
-  })
+  // }, [pageNum])
 
   return (
-    <div className="bg-blue-50 w-screen h-fit pt-20">
+    <div className="bg-blue-50 w-screen h-fit py-20 flex flex-col">
       <h1 className="text-blue-900 text-8xl">News Reader</h1>
-      <div className="grid grid-cols-3 grid-rows-2 gap-3 p-20">
-        {articleCards}
-      </div>
+      <ArticleCards articles={articles} setChosenStory={setChosenStory}/>
+      <button onClick={() => setPageNum(pageNum+1)} className="rounded-full w-fit self-center hover:translate-x-6 transition ease-in-out"><img src={next}/></button>
     </div>
   )
 }
