@@ -3,9 +3,10 @@ import Landing from "./Landing"
 import Nav from "./Nav"
 import ArticleDetails from "./ArticleDetails"
 import { useState } from "react"
+import { Article } from './types';
 
-const App = () => {
-  const [chosenStory, setChosenStory] = useState(null)
+const App: React.FC = () => {
+  const [chosenStory, setChosenStory] = useState<Article | null>(null);
 
   return (
     <div className="relative">
