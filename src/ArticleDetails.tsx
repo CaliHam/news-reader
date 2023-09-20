@@ -15,7 +15,7 @@ const ArticleDetails: React.FC<ArticleProps> = ({article}) => {
 
   return (
     <div className="bg-blue-50 w-screen h-auto pt-20 pl-20">
-      <Link to="/"><button className="bg-blue-900 rounded-full text-blue-50 px-3 self-center w-fit">Go Back</button></Link>
+      <Link to="/"><button className="bg-blue-900 rounded-full text-blue-50 px-3 self-center w-fit">Back</button></Link>
       <article className="flex flex-col text-black pt-10 p-20">
       <img src={article.urlToImage ? article.urlToImage : reporting} className="w-full h-auto" alt={article.title}/>
         <h1 className="text-5xl my-5 text-blue-900">{article.title}</h1>

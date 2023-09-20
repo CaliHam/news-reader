@@ -9,12 +9,12 @@ type ArticleProps = {
 };
 
 const ArticleCards: React.FC<ArticleProps> = ({articles, setChosenStory}) => {
-  const articleGrid = articles.map((article) => {
+  const articleGrid = articles.map((article, i) => {
     if (article.content === '[Removed]') {
       return null
     }
     return (
-      <div className="border-2 border-solid border-blue-500 flex flex-col">
+      <div className="border-2 border-solid border-blue-500 flex flex-col" key={`article-${i}`}>
         <img src={article.urlToImage ? article.urlToImage : reporting} className="w-full h-54 object-cover object-center" alt={article.title}/>
         <h2 className="text-blue-900 text-2xl p-5 pb-0">{dayjs(article.publishedAt).format('MMMM DD, YYYY')}</h2>
         <h2 className="text-blue-700 text-3xl p-5">{article.title}</h2>
