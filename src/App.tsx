@@ -4,16 +4,19 @@ import Nav from "./Nav"
 import ArticleDetails from "./ArticleDetails"
 import { useState } from "react"
 import { Article } from './types';
+import Results from "./Results"
 
 const App: React.FC = () => {
   const [chosenStory, setChosenStory] = useState<Article | null>(null);
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
   return (
     <div className="relative">
-      <Nav />
+      <Nav searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
       <Routes>
         <Route path="/" element={ <Landing setChosenStory={setChosenStory}/>} />
-        <Route path="/:articleTitle" element={<ArticleDetails article={chosenStory}/>} />
+        <Route path="/:articleSouce" element={<ArticleDetails article={chosenStory}/>} />
+        <Route path="/searchresults/:searchTerm" element={<Results setChosenStory={setChosenStory} searchTerm={searchTerm}/>} />
       </Routes>
     </div>
   )
