@@ -1,4 +1,4 @@
-# The Amiibo Gallery
+# News Reader
 ### [View Deployed Site](news-reader-orpin.vercel.app)
 
 ## Abstract: 
