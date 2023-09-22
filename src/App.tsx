@@ -5,19 +5,18 @@ import ArticleDetails from "./ArticleDetails"
 import { useState } from "react"
 import { Article } from './types';
 import Results from "./Results"
-import dayjs from "dayjs"
 
 const App: React.FC = () => {
   const [chosenStory, setChosenStory] = useState<Article | null>(null);
-  const [date, setDate] = useState<string | number | Date | dayjs.Dayjs | null | undefined>(null);
+  const [searchTerm, setSearchTerm] = useState<string>('');
 
   return (
     <div className="relative">
-      <Nav date={date} setDate={setDate}/>
+      <Nav searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
       <Routes>
         <Route path="/" element={ <Landing setChosenStory={setChosenStory}/>} />
-        <Route path="/:articleTitle" element={<ArticleDetails article={chosenStory}/>} />
-        <Route path="/searchresults/:date" element={<Results setChosenStory={setChosenStory} date={date}/>} />
+        <Route path="/:articleSouce" element={<ArticleDetails article={chosenStory}/>} />
+        <Route path="/searchresults/:searchTerm" element={<Results setChosenStory={setChosenStory} searchTerm={searchTerm}/>} />
       </Routes>
     </div>
   )

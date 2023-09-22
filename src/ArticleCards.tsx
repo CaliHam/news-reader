@@ -18,7 +18,7 @@ const ArticleCards: React.FC<ArticleProps> = ({articles, setChosenStory}) => {
         <img src={article.urlToImage ? article.urlToImage : reporting} className="w-full h-54 object-cover object-center" alt={article.title}/>
         <h2 className="text-blue-900 text-2xl p-5 pb-0">{dayjs(article.publishedAt).format('MMMM DD, YYYY')}</h2>
         <h2 className="text-blue-700 text-3xl p-5">{article.title}</h2>
-        <Link to={`/${article.title}`} className="self-center"><button onClick={() => setChosenStory(article)} className="bg-blue-900 rounded-full text-blue-50 px-3 w-fit">Read More</button></Link>
+        <Link to={`/${article.source.name}`} className="self-center"><button onClick={() => setChosenStory(article)} className="bg-blue-900 rounded-full text-blue-50 px-3 w-fit">Read More</button></Link>
       </div>
     )
   })
