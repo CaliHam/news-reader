@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 // import mockData from "./mockData/topHeadlinesMockData.json"
 import next from './assets/next.png'
+import loudSpeaker from './assets/loud-speaker.png'
 import ArticleCards from "./ArticleCards"
 import { Article } from './types';
 
@@ -21,7 +22,10 @@ const Landing: React.FC<LandingProps> = ({setChosenStory}) => {
   
   return (
     <div className="bg-blue-50 w-screen h-fit py-20 flex flex-col">
-      <h1 className="text-blue-900 text-8xl">News Reader</h1>
+      <header className="w-fit flex items-center">
+        <h1 className="text-blue-900 text-8xl px-5">News Reader </h1>
+        <img src={loudSpeaker} alt="loud speaker"/>
+      </header>
       <ArticleCards articles={articles} setChosenStory={setChosenStory}/>
       <p className="self-center text-blue-900 text-xl pb-10">Page {`${pageNum}`}</p>
       <button onClick={() => setPageNum(pageNum+1)} className="rounded-full w-fit self-center hover:translate-x-6 transition ease-in-out"><img src={next}/></button>
