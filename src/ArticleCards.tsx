@@ -12,7 +12,7 @@ const ArticleCards: React.FC<ArticleProps> = ({articles, setChosenStory}) => {
   const articleGrid = articles.map((article, i) => {
     if (article.content === '[Removed]') {
       return null
-    }
+    } 
     return (
       <div className="border-2 border-solid border-blue-500 flex flex-col" key={`article-${i}`}>
         <img src={article.urlToImage ? article.urlToImage : reporting} className="w-full h-54 object-cover object-center" alt={article.title}/>
@@ -25,7 +25,7 @@ const ArticleCards: React.FC<ArticleProps> = ({articles, setChosenStory}) => {
 
   return (
     <div className="grid grid-cols-3 grid-rows-2 gap-3 p-20">
-      {articleGrid}
+      {articles.length ? articleGrid : <p>No Articles Found</p>}
     </div>
   )
 }

@@ -18,7 +18,7 @@ const Results: React.FC<ResultsProps> = ({setChosenStory, searchTerm}) => {
   const formattedYesterday = yesterday.format('YYYY-MM-DD');
 
   useEffect(() => {
-    fetch(`https://newsapi.org/v2/everything?q=${searchTerm}&from=${formattedYesterday}&sortBy=popularity&page=${resPageNum}&pageSize=6&apiKey=ab33066f4086468da77fc97eceef18d6`)
+    fetch(`https://newsapi.org/v2/everything?q=${searchTerm}&from=${formattedYesterday}&sortBy=popularity&page=${resPageNum}&pageSize=6&apiKey=97d2401d99444987910e149d91f7ddab`)
     .then(res => res.json())
     .then(data => setArticleResults(data.articles))
   }, [searchTerm, formattedYesterday, resPageNum])

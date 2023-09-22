@@ -14,11 +14,11 @@ const Landing: React.FC<LandingProps> = ({setChosenStory}) => {
   const [pageNum, setPageNum] = useState(1)
 
   useEffect(() => {
-    fetch(`https://newsapi.org/v2/top-headlines?country=us&apiKey=ab33066f4086468da77fc97eceef18d6&page=${pageNum}&pageSize=6`)
+    fetch(`https://newsapi.org/v2/top-headlines?country=us&page=${pageNum}&pageSize=6&apiKey=97d2401d99444987910e149d91f7ddab`)
     .then(res => res.json())
     .then(data => setArticles(data.articles))
   }, [pageNum])
-
+  
   return (
     <div className="bg-blue-50 w-screen h-fit py-20 flex flex-col">
       <h1 className="text-blue-900 text-8xl">News Reader</h1>
