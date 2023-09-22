@@ -1,27 +1,30 @@
-# React + TypeScript + Vite
+# The Amiibo Gallery
+### [View Deployed Site](link.app)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Abstract: 
+This site was built to assist with all you amiibo needs! View all currently available amiibos by their game series or simply search for one.
 
-Currently, two official plugins are available:
+### Preview of App:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Preview of The Amiibo Gallery](link)
 
-## Expanding the ESLint configuration
+### Context:
+I am currently in Mod 4 of the Turing Frontend Development Program. A total of __ hours were spent on this project.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Contributors
+<table>
+  <tr>
+    <td> Calli Herrmann <a href="https://github.com/CaliHam">Github</td>
+  </tr>
+  <tr>
+    <td><img src="https://avatars.githubusercontent.com/u/126219151?v=4" alt="Calli GH img"
+  width="150" height="auto" /></td>
+</table>
 
-- Configure the top-level `parserOptions` property like this:
+### Learning Goals:
+- Implement Typescript and Tailwind CSS in a simple application built mostly in one day
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
+### Tech Stack
+- Typescript, Tailwind CSS, React, React Router, FETCH API's, 
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+#### Dependencies (if needed)
