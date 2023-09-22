@@ -6,7 +6,7 @@ This site was built to assist with all your news needs! The homepage will show 6
 
 ### Preview of App:
 
-![Preview of News Reader](link)
+![Preview of News Reader](./src/assets/preview.gif)
 
 ### Context:
 I am currently in Mod 4 of the Turing Frontend Development Program. This application was built with the mindset of receiving a prompt for a potential job with the time constraints of building an app within 6-8 hours using [News API](https://newsapi.org/). A total of 8 hours were spent on this project.
